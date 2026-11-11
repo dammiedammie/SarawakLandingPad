@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sarawak Landing Pad</title>
+<meta name="description" content="A safety net and network for Sarawakians starting diploma, undergraduate and postgraduate studies in Peninsular Malaysia.">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,800&display=swap">
+<link rel="stylesheet" href="./src/style.css">
+</head>
+<body>
+<header class="hero"><div class="wrap">
+  <h1>Leaving Sarawak for Malaya? You won’t land alone.</h1>
+  <p>Join Sarawakian students heading to diploma, degree and postgraduate studies in Peninsular Malaysia. Meet seniors, find help, and know who’s nearby from your first week.</p>
+  <a class="btn" href="#join">Join the network</a>
+</div></header>
+
+<main class="wrap">
+  <section id="join">
+    <h2>Tell us about you</h2>
+    <form id="join-form">
+      <label>Name <small>Use the name you’re comfortable showing.</small>
+        <input name="full_name" required minlength="2" maxlength="100" autocomplete="name"></label>
+
+      <fieldset><legend>Level of study</legend>
+        <label class="opt"><input type="radio" name="level" value="Diploma" required> Diploma</label>
+        <label class="opt"><input type="radio" name="level" value="Undergraduate"> Undergraduate</label>
+        <label class="opt"><input type="radio" name="level" value="Postgraduate"> Postgraduate</label>
+      </fieldset>
+
+      <div class="two">
+        <label>What you’re studying <input name="programme" required maxlength="120" placeholder="e.g. LLB Law"></label>
+        <label>Where you’re going <input name="destination_university" required maxlength="120" list="unis" placeholder="e.g. Universiti Malaya"></label>
+      </div>
+      <datalist id="unis"><option value="Universiti Malaya"><option value="UKM"><option value="UPM"><option value="UiTM"><option value="UTM"><option value="UIAM"><option value="USM"><option value="Monash University Malaysia"><option value="Taylor’s University"><option value="Sunway University"></datalist>
+
+      <div class="two">
+        <label>Previous school or institution <input name="previous_institution" required maxlength="120" placeholder="e.g. SMK Batu Lintang"></label>
+        <label>Intake year <select name="intake_year" id="intake_year" required></select></label>
+      </div>
+
+      <label>Home division in Sarawak
+        <select name="home_division" required><option value="">Choose one</option>
+          <option>Kuching</option><option>Samarahan</option><option>Serian</option><option>Sri Aman</option><option>Betong</option><option>Sarikei</option><option>Sibu</option><option>Mukah</option><option>Kapit</option><option>Bintulu</option><option>Miri</option><option>Limbang</option>
+        </select></label>
+
+      <fieldset><legend>What help would you like?</legend>
+        <label class="opt"><input type="checkbox" name="needs" value="Finding accommodation"> Finding accommodation</label>
+        <label class="opt"><input type="checkbox" name="needs" value="Airport pickup and transport"> Airport pickup and transport</label>
+        <label class="opt"><input type="checkbox" name="needs" value="A senior to ask questions"> A senior to ask questions</label>
+        <label class="opt"><input type="checkbox" name="needs" value="Study partners"> Study partners</label>
+        <label class="opt"><input type="checkbox" name="needs" value="Places of worship and community"> Places of worship and community</label>
+        <label class="opt"><input type="checkbox" name="needs" value="A contact in an emergency"> A contact in an emergency</label>
+      </fieldset>
+
+      <div class="two">
+        <label>WhatsApp number <small>Only the committee sees this.</small>
+          <input name="whatsapp" type="tel" required minlength="7" maxlength="20" autocomplete="tel" placeholder="+60 12-345 6789"></label>
+        <label>Email <small>Optional. Only the committee sees this.</small>
+          <input name="email" type="email" maxlength="120" autocomplete="email"></label>
+      </div>
+
+      <label>Religion <small>Optional. Only the committee sees this, to connect you with community groups.</small>
+        <select name="religion"><option value="">Prefer not to say</option><option>Islam</option><option>Christianity</option><option>Buddhism</option><option>Hinduism</option><option>Sikhism</option><option>Traditional beliefs</option><option>No religion</option><option>Other</option></select></label>
+
+      <input class="trap" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+      <label class="opt"><input type="checkbox" name="show"> Show my name, course and institution in the public directory below.</label>
+      <label class="opt"><input type="checkbox" name="consent" required> I agree that the committee may keep and use my details to match me with seniors and support. My WhatsApp, email and religion are never shown publicly, and I can ask the committee to delete my data at any time.</label>
+
+      <button class="btn" type="submit">Join the network</button>
+      <p id="form-msg" role="status"></p>
+    </form>
+  </section>
+
+  <section id="directory">
+    <h2>Who’s already here</h2>
+    <div id="filters" class="filters"></div>
+    <div id="list"></div>
+  </section>
+</main>
+<footer class="wrap"><p>Run by Persatuan Mahasiswa Sarawak Universiti Malaya. Questions or data deletion requests: add your committee email here.</p></footer>
+<script type="module" src="./src/main.js"></script>
+</body>
+</html>

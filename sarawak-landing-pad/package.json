@@ -1,0 +1,16 @@
+{
+  "name": "sarawak-landing-pad",
+  "version": "1.0.0",
+  "private": true,
+  "source": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --no-source-maps"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.45.0"
+  },
+  "devDependencies": {
+    "parcel": "^2.12.0"
+  }
+}
